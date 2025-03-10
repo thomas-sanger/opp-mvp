@@ -1,42 +1,76 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* CSS Reset */
+/* Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* This sets the box model of ALL elements and pseudo-elements */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Remove default margin for all elements. Does not include pseudo-elements */
+* {
+  margin: 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  /* Add accessible line-height (space between lines of text) to 1.5x the font size */
+  line-height: 1.5;
+  /*Improves text rendering and enables font smoothing in WebKit and Blink based browsers (I.e. Chrome, Edge, Safari, Opera) */
+  -webkit-font-smoothing: antialiased;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  /* This means that this is a block-level element. The element will take up the full width of their container and don’t leave extra space below. Also helps avoid layout shifts caused by inline behavior. */
+  display: block;
+  /* Ensures media elements do not overflow their container. Since it is a percentage, it is responsive. */
+  max-width: 100%;
 }
 
-.card {
-  padding: 2em;
+/* Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  /* Makes form elements use the same font as their surrounding text. */
+  font: inherit;
 }
 
-.read-the-docs {
-  color: #888;
+/* Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* This will break a long word (or unbroken string) onto the next line instead of overflowing the width of it's container. */
+  overflow-wrap: break-word;
 }
+
+/* Improve line wrapping */
+p {
+  /* Allows browsers to make smarter line breaks by considering natural word grouping and punctuation. */
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* Adjusts line breaks so that each line is more balanced in length, reducing awkward short lines (widows) or excessive gaps. */
+  text-wrap: balance;
+}
+
+/* Create a root stacking context (Useful for React applications) */
+#root,
+#__next {
+  /* Now #root becomes a root stacking context, meaning any z-index conflicts outside it won’t affect elements inside. Ensures that child elements do not interact with elements outside of the #root container in terms of stacking and z-index*/
+  isolation: isolate;
+}
+/* End CSS Reset */
