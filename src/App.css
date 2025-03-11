@@ -70,7 +70,7 @@ h6 {
 /* Create a root stacking context (Useful for React applications) */
 #root,
 #__next {
-  /* Now #root becomes a root stacking context, meaning any z-index conflicts outside it won’t affect elements inside. Ensures that child elements do not interact with elements outside of the #root container in terms of stacking and z-index*/
+  /* Now #root becomes a root stacking context, meaning any z-index conflicts outside it won’t affect elements inside. Ensures that child elements do not interact with elements outside of the #root container in terms of stacking and z-index */
   isolation: isolate;
 }
 /* End CSS Reset */
